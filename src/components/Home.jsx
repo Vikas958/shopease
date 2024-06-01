@@ -50,7 +50,6 @@ const Home = () => {
 
   const dispatch = useDispatch()
   const addToCartHandler = (options) => {
-    // console.log(options);
     dispatch({ type: "addToCart", payload: options });
     dispatch({ type: 'calculatePrice' });
     toast.success("Added to Cart");
@@ -62,7 +61,7 @@ const Home = () => {
         <ProductCard
           key={i.id}
           imgSrc={i.image}
-          name={i.name}
+          name={i.title}
           price={i.price}
           id={i.id}
           handler={addToCartHandler}
